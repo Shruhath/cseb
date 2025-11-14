@@ -1,0 +1,22 @@
+{
+  "links": [
+    {
+      "title": "My Portfolio",
+      "url": "https://example.com",
+      "order": 0,
+      "target": "_blank"
+    },
+    {
+      "title": "Follow on Twitter",
+      "url": "https://twitter.com",
+      "order": 1,
+      "target": "_blank"
+    },
+    {
+      "title": "Connect on LinkedIn",
+      "url": "https://linkedin.com",
+      "order": 2,
+      "target": "_blank"
+    }
+  ]
+}
