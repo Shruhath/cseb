@@ -21,16 +21,20 @@ import {
   createUserWithEmailAndPassword 
 } from "firebase/auth";
 
-// Firebase config - use environment variables in production
+// Firebase config - use environment variables
 const firebaseConfig = {
-  apiKey: "AIzaSyAcS43HJjJHsXnwa6A-O6a6mSTdvBaFWIE",
-  authDomain: "semtree-2450d.firebaseapp.com",
-  projectId: "semtree-2450d",
-  storageBucket: "semtree-2450d.firebasestorage.app",
-  messagingSenderId: "201762808116",
-  appId: "1:201762808116:web:dbf96f69a50b5dbeffc561",
-  measurementId: "G-W9CKVG2DQV"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || "",
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN || "",
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID || "",
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET || "",
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID || "",
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID || "",
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID || ""
 };
+
+if (!firebaseConfig.apiKey || !firebaseConfig.projectId) {
+  console.error("Firebase configuration is missing. Please set environment variables.");
+}
 
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);

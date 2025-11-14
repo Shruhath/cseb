@@ -2,29 +2,49 @@
 node_modules/
 /.pnp
 .pnp.js
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
 
 # Testing
 /coverage
+*.lcov
+.nyc_output
 
 # Next.js
 /.next/
 /out/
+.next
+out
 
 # Production
 /build
+dist
 
 # Misc
 .DS_Store
 *.pem
+*.log
 
 # Debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# Local env files
-.env*.local
+# Local env files - CRITICAL: Never commit these!
 .env
+.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+*.env
+
+# Environment variables
+.envrc
 
 # Vercel
 .vercel
@@ -39,7 +59,29 @@ next-env.d.ts
 *.swp
 *.swo
 *~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
 
 # OS
 Thumbs.db
+.DS_Store
+Desktop.ini
 
+# Firebase
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Lock files (optional - some teams prefer to commit these)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
