@@ -31,15 +31,19 @@ yarn install
 
 ### 2. Configure Firebase
 
-The app comes pre-configured with a Firebase project (`semtree-2450d`). For production:
-
 1. Create your own Firebase project at [firebase.google.com](https://firebase.google.com)
-2. Update the `firebaseConfig` in `lib/firebase.ts` with your credentials
-3. Set up environment variables (optional but recommended for production):
-   - `NEXT_PUBLIC_FIREBASE_API_KEY`
-   - `NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN`
-   - `NEXT_PUBLIC_FIREBASE_PROJECT_ID`
-   - etc.
+2. Get your Firebase configuration from Project Settings → General → Your apps
+3. Create a `.env.local` file in the root directory with your Firebase credentials:
+   ```
+   NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key_here
+   NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_project_id.firebaseapp.com
+   NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+   NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_project_id.firebasestorage.app
+   NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+   NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+   NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=your_measurement_id
+   ```
+4. **Important**: Never commit `.env.local` or `.env` files to git! They are already in `.gitignore`
 
 ### 3. Set Up Firestore
 
